@@ -13,7 +13,7 @@
   <script>
     var vapidPublicKey = "<?php echo getenv('VAPID_PUBLIC_KEY'); ?>"
   </script>
-  <script src="main.js" charset="utf-8"></script>
+  <script src="js/main.js" charset="utf-8"></script>
 </body>
 
 </html>
