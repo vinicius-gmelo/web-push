@@ -6,10 +6,12 @@ const cors = require('cors');
 
 const app = express();
 
+const vapidKeys = require('../config/vapid-keys.json');
+
 app.use(cors());
 app.use(bodyParser.json());
 
-webpush.setVapidDetails('mailto:teste@teste.com', process.env.VAPID_PUBLIC_KEY, process.env.VAPID_PRIVATE_KEY);
+webpush.setVapidDetails('mailto:teste@teste.com', vapidKeys.publicKey, vapidKeys.privateKey);
 
 app.post('/subscribe', (req, res) => {
   res.status(201).json({});
@@ -24,6 +26,6 @@ app.use((req, res, next) => {
   res.sendStatus(404);
 });
 
-const port = 5000;
+const port = process.env.BACKEND_PORT;
 
 app.listen(port, () => console.log(`Servidor iniciado na porta ${port}`));

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Servers ports
+
+BACKEND_PORT="$(shuf -i 2000-65000 -n 1)"
+FRONTEND_PORT="$(shuf -i 2000-65000 -n 1)"
+
+export BACKEND_PORT FRONTEND_PORT
