@@ -29,6 +29,14 @@ if ('serviceWorker' in navigator) {
       sw = reg.active;
     }
 
+    if (sw.state == "activated") {
+      try {
+        pushSubscription = await subscribePush(reg);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
     if (sw) {
       console.log('SW: ' + sw.state);
       sw.addEventListener("statechange", async (e) => {
