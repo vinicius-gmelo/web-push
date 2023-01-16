@@ -19,7 +19,7 @@ app.post('/subscribe', (req, res) => {
   const subscription = req.body;
   const payload = JSON.stringify({ title: 'Teste', body: 'Teste' });
 
-  webpush.sendNotification(subscription, payload).catch((err) => console.error(err));
+  webpush.sendNotification(subscription, payload).catch((err) => console.error(`${new Date().toUTCString()}: ${err}`));
 });
 
 app.use((req, res, next) => {
@@ -28,4 +28,4 @@ app.use((req, res, next) => {
 
 const port = process.env.BACKEND_PORT;
 
-app.listen(port, () => console.log(`Servidor iniciado na porta ${port}`));
+app.listen(port, () => console.log(`${new Date().toUTCString()}: Servidor iniciado na porta ${port}`));

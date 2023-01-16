@@ -10,7 +10,13 @@ const subscribePush = (reg) => reg.pushManager.subscribe({
 });
 
 if ('serviceWorker' in navigator) {
-  registerSW().then((reg) => {
+
+  (async () => {
+
+    let sw;
+
+    const reg = await registerSW();
+
     if (reg.installing) {
       sw = reg.installing;
     } else if (reg.waiting) {
@@ -18,20 +24,23 @@ if ('serviceWorker' in navigator) {
     } else if (reg.active) {
       sw = reg.active;
     }
+
     if (sw) {
       console.log('SW: ' + sw.state);
-      sw.addEventListener("statechange", (e) => {
+      sw.addEventListener("statechange", async (e) => {
         console.log('SW: ' + e.target.state);
-        if (e.target.state == "activated") return subscribePush(reg);
-      });
+        if (e.target.state == "activated") {
+          pushSubscription = await subscribePush(reg);
+        }
+      })
     }
-  }).then((subs) => {
-    pushSubscription = subs;
-  });
+
+  })()
+
 }
 
 testBtn.addEventListener('click', (e) => {
-  fetch(
+  if (pushSubscription) fetch(
     `${serverAddress}/subscribe`,
     {
       method: 'POST',
