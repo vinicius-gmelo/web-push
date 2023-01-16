@@ -23,7 +23,7 @@ cd backend
 
 printf "\nBackend: 'http://localhost:%s'.\nLog: '%s'.\n" "${BACKEND_PORT}" "$(pwd)/server.log"
 
-if ! node index.js >> backend-server.log 2>&1; then
+if ! node server.js >> backend-server.log 2>&1; then
   printf "\nErro ao iniciar o servidor do backend. '%s':\n%s\n" "$(pwd)/server.log" "$(tail backend-server.log)"
 fi
 ) & 
