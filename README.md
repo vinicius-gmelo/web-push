@@ -4,4 +4,4 @@ Exemplo de notificações push usando um Service Worker e a biblioteca [web-push
 - `node`
 - `php` (apenas para o servidor de testes do cliente e para setar variaveis na pagina inicial; poderia ser resolvido de outras maneiras...)
 ## Uso
-- `chmod +x start.sh; ./start.sh`.
+- `chmod +x init; ./init`.
