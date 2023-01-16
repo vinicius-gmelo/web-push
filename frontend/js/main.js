@@ -13,9 +13,13 @@ if ('serviceWorker' in navigator) {
 
   (async () => {
 
-    let sw;
+    let sw, reg;
 
-    const reg = await registerSW();
+    try {
+      reg = await registerSW();
+    } catch (err) {
+      console.error(err);
+    }
 
     if (reg.installing) {
       sw = reg.installing;
@@ -30,7 +34,11 @@ if ('serviceWorker' in navigator) {
       sw.addEventListener("statechange", async (e) => {
         console.log('SW: ' + e.target.state);
         if (e.target.state == "activated") {
-          pushSubscription = await subscribePush(reg);
+          try {
+            pushSubscription = await subscribePush(reg);
+          } catch (err) {
+            console.error(err);
+          }
         }
       })
     }

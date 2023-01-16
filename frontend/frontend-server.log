@@ -1,0 +1,13 @@
+[Mon Jan 16 03:54:12 2023] PHP 8.0.26 Development Server (http://localhost:63545) started
+[Mon Jan 16 03:54:16 2023] [::1]:36840 Accepted
+[Mon Jan 16 03:54:16 2023] [::1]:36840 [200]: GET /
+[Mon Jan 16 03:54:16 2023] [::1]:36840 Closing
+[Mon Jan 16 03:54:16 2023] [::1]:36850 Accepted
+[Mon Jan 16 03:54:16 2023] [::1]:36858 Accepted
+[Mon Jan 16 03:54:16 2023] [::1]:36850 [200]: GET /js/main.js
+[Mon Jan 16 03:54:16 2023] [::1]:36850 Closing
+[Mon Jan 16 03:54:16 2023] [::1]:36858 [200]: GET /sw.js
+[Mon Jan 16 03:54:16 2023] [::1]:36858 Closing
+[Mon Jan 16 03:54:16 2023] [::1]:36860 Accepted
+[Mon Jan 16 03:54:16 2023] [::1]:36860 [404]: GET /favicon.ico - No such file or directory
+[Mon Jan 16 03:54:16 2023] [::1]:36860 Closing
