@@ -1,4 +1,4 @@
-# Notificações Push com Service Worker e Express
+# Notificações Push com Service Workers e Express
 Exemplo de notificações push usando um Service Worker e a biblioteca [web-push](https://github.com/web-push-libs/web-push), com [Express](https://github.com/expressjs/express).
 ## Requerimentos
 - `node`
