@@ -1,1 +1,4 @@
 node_modules/
+/frontend/frontend-server.log
+/backend/backend-server.log
+/config/vapid-keys.json
